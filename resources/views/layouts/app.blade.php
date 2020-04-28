@@ -8,7 +8,6 @@
     </head>
 
     <body>
-        @include('commons.error_tasks')
 
         @include('commons.navbar')
         
