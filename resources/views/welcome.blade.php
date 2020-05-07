@@ -3,22 +3,18 @@
 @section('content')
     @if (Auth::check())
         <div class="row">
-            <aside class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">{{ Auth::user()->name }}</h3>
+            <aside class="col-sm-3">
+                <div>
+                    <div>
+                        <h3>{{ Auth::user()->name }}</h3>
                     </div>
 
                 </div>
             </aside>
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 @if (Auth::id() == $user->id)
                     {!! Form::open(['route' => 'tasks.store']) !!}
-                        <div class="form-group">
-                            {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
-                            {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
-                        </div>
-                    {!! Form::close() !!}
+                    {!! link_to_route('tasks.create', '新規タスクの投稿', [], ['class' => 'btn btn-primary']) !!}
                 @endif
                 @if (count($tasks) > 0)
                     @include('tasks.index')
