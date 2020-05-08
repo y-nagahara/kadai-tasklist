@@ -81,6 +81,7 @@ class TasksController extends Controller
                 'task' => $task,
         ]);
         }
+        return redirect("/");
     }
 
     /**
@@ -100,6 +101,7 @@ class TasksController extends Controller
                 'task' => $task,
             ]);
         }
+        return redirect('/');
     }
 
     /**
